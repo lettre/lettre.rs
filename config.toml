@@ -1,0 +1,18 @@
+baseURL = "https://blog.lettre.at/"
+languageCode = "en-us"
+title = "Lettre"
+theme = "journal"
+
+[params]
+  description = "Lettre: a mailer library for Rust"
+  githubUsername = "lettre"
+  twitterUsername = "lettre_at"
+  tagline = "A mailer library for Rust"
+#[params.work]
+#  jobTitle = "occupation"
+#  company = "the company"
+#  companyUrl = "https://the.company.url/"
+#[params.gpg]
+#  key = "0x1111111111111111"
+#  fingerprint = "0000 0000 0000 0000 0000  0000 0000 0000 0000 0000"
+#  link = "https://pgp.mit.edu/pks/lookup?op=get&search=0x1111111111111111"
