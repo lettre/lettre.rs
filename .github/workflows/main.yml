@@ -1,0 +1,10 @@
+name: Deploy
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - name: Hugo Actions
+      uses: srt32/hugo-action@v0.0.3
