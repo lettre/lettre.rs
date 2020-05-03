@@ -1,12 +1,11 @@
-baseURL = "https://blog.lettre.at/"
+baseURL = "https://lettre.at/"
 languageCode = "en-us"
 title = "Lettre"
 theme = ["lettre", "journal"]
 
+[author]
+name = "Alexis Mousset"
+
 [params]
-AuthorName = "amousset"
-GithubUsername = "lettre"
-twitterusername = "lettre_at"
+description = "News about the lettre email library"
 Tagline = "A mailer library for Rust"
-mainSections = [ "post" ]
-homepage = "https://lettre.at"

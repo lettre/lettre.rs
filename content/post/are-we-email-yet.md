@@ -5,10 +5,6 @@ date: "2019-09-01"
 draft: true
 ---
 
-## Are we email yet?
-
-TODO
-
 short email landscape in rust
 
 * [rust-async](https://github.com/async-email/async-smtp), provides a async SMTP transport

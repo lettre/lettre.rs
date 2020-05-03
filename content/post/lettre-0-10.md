@@ -22,7 +22,7 @@ Non-goals:
 
 ### Background
 
-The `lettre` crate was previously named [`smtp`](https://crates.io/crates/smtp). It was [created](https://github.com/lettre/lettre/commit/270efd193a11e66dce14700a50d3c42c12e725bc) in early 2014 (before cargo, Rust 1.0, etc.).
+The `lettre` crate was previously named [`smtp`](https://crates.io/crates/smtp). It [started](https://github.com/lettre/lettre/commit/270efd193a11e66dce14700a50d3c42c12e725bc) in early 2014 (before cargo, Rust 1.0, etc.).
 
 The first goal was to start a toy project as a pretext to learn Rust. I started with an `smtp` implementation after seeing there was no existing implementation in Rust. Originally, the project aimed at implementing the `SMTP` protocol for client and server.
 
