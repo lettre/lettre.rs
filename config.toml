@@ -1,6 +1,6 @@
 baseURL = "https://lettre.at/"
 languageCode = "en-us"
-title = "Lettre"
+title = "lettre"
 theme = ["lettre", "journal"]
 
 [author]
@@ -8,4 +8,4 @@ name = "Alexis Mousset"
 
 [params]
 description = "News about the lettre email library"
-Tagline = "A mailer library for Rust"
+Tagline = "a mailer library for Rust"

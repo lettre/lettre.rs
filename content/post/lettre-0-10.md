@@ -1,5 +1,5 @@
 ---
-title: "Lettre 0.10"
+title: "lettre 0.10"
 description: "Lettre 0.10 has been released"
 date: "2020-04-01"
 draft: true
