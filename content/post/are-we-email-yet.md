@@ -1,7 +1,7 @@
 ---
 title: "are we email yet?"
 description: "State of Rust email ecosystem"
-date: "2019-09-01"
+date: "2020-01-01"
 draft: true
 ---
 
