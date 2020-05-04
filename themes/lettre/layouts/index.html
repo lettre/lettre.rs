@@ -2,10 +2,9 @@
 
   <article class="posts">
 
-    <h2>news</h2>
     {{ range site.RegularPages.GroupByDate "2006" -}}
     <section>
-      <h3>{{ .Key }}</h3>
+      <h2>{{ .Key }}</h2>
 
       <ol>
         {{ range .Pages -}}

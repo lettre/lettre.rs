@@ -32,7 +32,9 @@ In 2016, the goal changed, and specialized to email client (as I did not see muc
 
 * Replacement of the message implementation (which was based on `rust-email`)
   by a new one based on the `emailmessage` crate. To main goal is to provide
-  sane encoding and multipart was a simple implementation (no message parsing).
+  sane encoding and multipart with a simple implementation (no message parsing).
+  `email` API requires email knowledge and maintaining a facade makes things
+  harder.
 * Merge of the `lettre_email` crate into `lettre`. This split made not much sense, and the message
   builder is now a feature of the `lettre` crate.
 * More features to allow disabling most features.
@@ -62,3 +64,6 @@ I'd also want to add more real-world automated testing with actual mail servers 
 
 If you want to contribute, the `lettre` repo and organizations are definitely open for anything
 related to email.
+
+Depending on the ecosystem evolution, the future may bring an independent SMTP implementation
+(similar to the `http` crate), and a more powerful message representation.
