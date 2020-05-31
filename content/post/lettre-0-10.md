@@ -1,8 +1,7 @@
 ---
 title: "lettre 0.10"
-description: "lettre 0.10 has been released"
-date: "2020-04-01"
-draft: true
+description: "Towards lettre 0.10"
+date: "2020-05-31"
 ---
 
 ## What is `lettre`?
@@ -43,15 +42,16 @@ In 2016, the goal changed, and specialized to email client (as I did not see muc
 
 ### Migration from 0.9
 
-TODO
+* `Transport` API is mostly compatible for most use cases
+* Email builder has been replaced but compatibility methods will be added before 0.10 release
 
 ## Road to 1.0
 
-Lettre is now used by several projects, including crates.io itself!
+Lettre is now used by several projects, including crates.io!
 It will be good to have a stable basis for the future.
 
 The plan is that 0.10 is the release preparing the 1.0 in the following months.
-I'd also want to add more real-world automated testing with actual mail servers (at least postfix).
+I'd also want to add more real-world automated testing with actual mail servers.
 
 ## After
 
