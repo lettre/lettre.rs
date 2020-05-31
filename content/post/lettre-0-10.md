@@ -1,6 +1,6 @@
 ---
 title: "lettre 0.10"
-description: "Lettre 0.10 has been released"
+description: "lettre 0.10 has been released"
 date: "2020-04-01"
 draft: true
 ---
@@ -30,17 +30,16 @@ In 2016, the goal changed, and specialized to email client (as I did not see muc
 
 ## Changes in 0.10
 
-* Replacement of the message implementation (which was based on `rust-email`)
+* Replacement of the email builder implementation (which was based on `rust-email`)
   by a new one based on the `emailmessage` crate. To main goal is to provide
   sane encoding and multipart with a simple implementation (no message parsing).
   `email` API requires email knowledge and maintaining a facade makes things
   harder.
-* Merge of the `lettre_email` crate into `lettre`. This split made not much sense, and the message
-  builder is now a feature of the `lettre` crate.
-* More features to allow disabling most features.
-* Add the option to use `rustls` for TLS.
+* Merge of the `lettre_email` crate into `lettre`, and more features to allow disabling most features.
+* Add the option to use `rustls` for TLS, and use it by default.
 * Improved parsing of server responses.
 * Moved CI from Travis to Github actions.
+* Async support (based on `async-std`).
 
 ### Migration from 0.9
 
@@ -54,13 +53,9 @@ It will be good to have a stable basis for the future.
 The plan is that 0.10 is the release preparing the 1.0 in the following months.
 I'd also want to add more real-world automated testing with actual mail servers (at least postfix).
 
-`async` is not a goal for 1.0, as it is not as relevant for emails as it is for other ecosystems
-(like web), and theadpool-based solutions are in general very suited.
-
 ## After
 
 * reuse `smtp` crate for the protocol (a bit like `http`)
-* async
 
 If you want to contribute, the `lettre` repo and organizations are definitely open for anything
 related to email.
