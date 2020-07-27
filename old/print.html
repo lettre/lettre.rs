@@ -1,0 +1,501 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Lettre</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="The user documentation of the Lettre crate.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body class="light">
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { } 
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            document.body.className = theme;
+            document.querySelector('html').className = theme + ' js';
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <ol class="chapter"><li><a href="index.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li><a href="creating-messages/email.html"><strong aria-hidden="true">2.</strong> Creating Messages</a></li><li><a href="sending-messages/_index.html"><strong aria-hidden="true">3.</strong> Sending Messages</a></li><li><ol class="section"><li><a href="sending-messages/smtp.html"><strong aria-hidden="true">3.1.</strong> SMTP Transport</a></li><li><a href="sending-messages/sendmail.html"><strong aria-hidden="true">3.2.</strong> Sendmail Transport</a></li><li><a href="sending-messages/file.html"><strong aria-hidden="true">3.3.</strong> File Transport</a></li><li><a href="sending-messages/stub.html"><strong aria-hidden="true">3.4.</strong> Stub Transport</a></li></ol></li></ol>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar" class="menu-bar">
+                    <div id="menu-bar-sticky-container">
+                        <div class="left-buttons">
+                            <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                                <i class="fa fa-bars"></i>
+                            </button>
+                            <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                                <i class="fa fa-paint-brush"></i>
+                            </button>
+                            <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                                <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                            </ul>
+                            
+                            <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                                <i class="fa fa-search"></i>
+                            </button>
+                            
+                        </div>
+
+                        <h1 class="menu-title">Lettre</h1> 
+
+                        <div class="right-buttons">
+                            <a href="print.html" title="Print this book" aria-label="Print this book">
+                                <i id="print-button" class="fa fa-print"></i>
+                            </a>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <a class="header" href="#introduction" id="introduction"><h1>Introduction</h1></a>
+<p>Lettre is an email library that allows creating and sending messages. It provides:</p>
+<ul>
+<li>An easy to use email builder</li>
+<li>Pluggable email transports</li>
+<li>Unicode support (for emails and transports, including for sender et recipient addresses when compatible)</li>
+<li>Secure defaults (emails are only sent encrypted by default)</li>
+</ul>
+<p>The <code>lettre_email</code> crate allows you to compose messages, and the <code>lettre</code>
+provide transports to send them.</p>
+<p>Lettre requires Rust 1.32 or newer. Add the following to your <code>Cargo.toml</code>:</p>
+<pre><code class="language-toml">[dependencies]
+lettre = &quot;0.9&quot;
+lettre_email = &quot;0.9&quot;
+</code></pre>
+<a class="header" href="#creating-messages" id="creating-messages"><h3>Creating messages</h3></a>
+<p>This section explains how to create emails.</p>
+<a class="header" href="#simple-example" id="simple-example"><h4>Simple example</h4></a>
+<p>The <code>email</code> part builds email messages. For now, it does not support attachments.
+An email is built using an <code>EmailBuilder</code>. The simplest email could be:</p>
+<pre><pre class="playpen"><code class="language-rust">extern crate lettre_email;
+
+use lettre_email::Email;
+
+fn main() {
+    // Create an email
+    let email = Email::builder()
+        // Addresses can be specified by the tuple (email, alias)
+        .to((&quot;user@example.org&quot;, &quot;Firstname Lastname&quot;))
+        // ... or by an address only
+        .from(&quot;user@example.com&quot;)
+        .subject(&quot;Hi, Hello world&quot;)
+        .alternative(&quot;&lt;h2&gt;Hi, Hello world.&lt;/h2&gt;&quot;, &quot;Hi, Hello world.&quot;)
+        .build();
+    
+    assert!(email.is_ok());
+}
+</code></pre></pre>
+<p>When the <code>build</code> method is called, the <code>EmailBuilder</code> will add the missing headers (like
+<code>Message-ID</code> or <code>Date</code>) and check for missing necessary ones (like <code>From</code> or <code>To</code>). It will
+then generate an <code>Email</code> that can be sent.</p>
+<p>The <code>text()</code> method will create a plain text email, while the <code>html()</code> method will create an
+HTML email. You can use the <code>alternative()</code> method to provide both versions, using plain text
+as fallback for the HTML version.</p>
+<a class="header" href="#sending-messages" id="sending-messages"><h3>Sending Messages</h3></a>
+<p>This section explains how to manipulate emails you have created.</p>
+<p>This mailer contains several different transports for your emails. To be sendable, the
+emails have to implement <code>SendableEmail</code>, which is the case for emails created with <code>lettre_email</code>.</p>
+<p>The following transports are available:</p>
+<ul>
+<li>The <code>SmtpTransport</code> uses the SMTP protocol to send the message over the network. It is
+the preferred way of sending emails.</li>
+<li>The <code>SendmailTransport</code> uses the sendmail command to send messages. It is an alternative to
+the SMTP transport.</li>
+<li>The <code>FileTransport</code> creates a file containing the email content to be sent. It can be used
+for debugging or if you want to keep all sent emails.</li>
+<li>The <code>StubTransport</code> is useful for debugging, and only prints the content of the email in the
+logs.</li>
+</ul>
+<a class="header" href="#smtp-transport" id="smtp-transport"><h4>SMTP Transport</h4></a>
+<p>This transport uses the SMTP protocol to send emails over the network (locally or remotely).</p>
+<p>It is designed to be:</p>
+<ul>
+<li>Secured: email are encrypted by default</li>
+<li>Modern: Unicode support for email content and sender/recipient addresses when compatible</li>
+<li>Fast: supports tcp connection reuse</li>
+</ul>
+<p>This client is designed to send emails to a relay server, and should <em>not</em> be used to send
+emails directly to the destination.</p>
+<p>The relay server can be the local email server, a specific host or a third-party service.</p>
+<a class="header" href="#simple-example-1" id="simple-example-1"><h4>Simple example</h4></a>
+<p>This is the most basic example of usage:</p>
+<pre><pre class="playpen"><code class="language-rust no_run">extern crate lettre;
+
+use lettre::{SendableEmail, EmailAddress, Transport, Envelope, SmtpClient};
+
+fn main() {
+    let email = SendableEmail::new(
+        Envelope::new(
+            Some(EmailAddress::new(&quot;user@localhost&quot;.to_string()).unwrap()),
+            vec![EmailAddress::new(&quot;root@localhost&quot;.to_string()).unwrap()],
+        ).unwrap(),
+        &quot;id&quot;.to_string(),
+        &quot;Hello world&quot;.to_string().into_bytes(),
+    );
+    
+    // Open a local connection on port 25
+    let mut mailer =
+    SmtpClient::new_unencrypted_localhost().unwrap().transport();
+    // Send the email
+    let result = mailer.send(email);
+    
+    assert!(result.is_ok());
+}
+</code></pre></pre>
+<a class="header" href="#complete-example" id="complete-example"><h4>Complete example</h4></a>
+<pre><pre class="playpen"><code class="language-rust no_run">extern crate lettre;
+
+use lettre::smtp::authentication::{Credentials, Mechanism};
+use lettre::{SendableEmail, Envelope, EmailAddress, Transport, SmtpClient};
+use lettre::smtp::extension::ClientId;
+use lettre::smtp::ConnectionReuseParameters;
+
+fn main() {
+    let email_1 = SendableEmail::new(
+        Envelope::new(
+            Some(EmailAddress::new(&quot;user@localhost&quot;.to_string()).unwrap()),
+            vec![EmailAddress::new(&quot;root@localhost&quot;.to_string()).unwrap()],
+        ).unwrap(),
+        &quot;id1&quot;.to_string(),
+        &quot;Hello world&quot;.to_string().into_bytes(),
+    );
+    
+    let email_2 = SendableEmail::new(
+        Envelope::new(
+            Some(EmailAddress::new(&quot;user@localhost&quot;.to_string()).unwrap()),
+            vec![EmailAddress::new(&quot;root@localhost&quot;.to_string()).unwrap()],
+        ).unwrap(),
+        &quot;id2&quot;.to_string(),
+        &quot;Hello world a second time&quot;.to_string().into_bytes(),
+    );
+    
+    // Connect to a remote server on a custom port
+    let mut mailer = SmtpClient::new_simple(&quot;server.tld&quot;).unwrap()
+        // Set the name sent during EHLO/HELO, default is `localhost`
+        .hello_name(ClientId::Domain(&quot;my.hostname.tld&quot;.to_string()))
+        // Add credentials for authentication
+        .credentials(Credentials::new(&quot;username&quot;.to_string(), &quot;password&quot;.to_string()))
+        // Enable SMTPUTF8 if the server supports it
+        .smtp_utf8(true)
+        // Configure expected authentication mechanism
+        .authentication_mechanism(Mechanism::Plain)
+        // Enable connection reuse
+        .connection_reuse(ConnectionReuseParameters::ReuseUnlimited).transport();
+    
+    let result_1 = mailer.send(email_1);
+    assert!(result_1.is_ok());
+    
+    // The second email will use the same connection
+    let result_2 = mailer.send(email_2);
+    assert!(result_2.is_ok());
+    
+    // Explicitly close the SMTP transaction as we enabled connection reuse
+    mailer.close();
+}
+</code></pre></pre>
+<p>You can specify custom TLS settings:</p>
+<pre><pre class="playpen"><code class="language-rust no_run">extern crate native_tls;
+extern crate lettre;
+extern crate lettre_email;
+
+use lettre::{
+    ClientSecurity, ClientTlsParameters, EmailAddress, Envelope, 
+    SendableEmail, SmtpClient, Transport,
+};
+use lettre::smtp::authentication::{Credentials, Mechanism};
+use lettre::smtp::ConnectionReuseParameters;
+use native_tls::{Protocol, TlsConnector};
+
+fn main() {
+    let email = SendableEmail::new(
+        Envelope::new(
+            Some(EmailAddress::new(&quot;user@localhost&quot;.to_string()).unwrap()),
+            vec![EmailAddress::new(&quot;root@localhost&quot;.to_string()).unwrap()],
+        ).unwrap(),
+        &quot;message_id&quot;.to_string(),
+        &quot;Hello world&quot;.to_string().into_bytes(),
+    );
+
+    let mut tls_builder = TlsConnector::builder();
+    tls_builder.min_protocol_version(Some(Protocol::Tlsv10));
+    let tls_parameters =
+        ClientTlsParameters::new(
+            &quot;smtp.example.com&quot;.to_string(),
+            tls_builder.build().unwrap()
+        );
+
+    let mut mailer = SmtpClient::new(
+        (&quot;smtp.example.com&quot;, 465), ClientSecurity::Wrapper(tls_parameters)
+    ).unwrap()
+        .authentication_mechanism(Mechanism::Login)
+        .credentials(Credentials::new(
+            &quot;example_username&quot;.to_string(), &quot;example_password&quot;.to_string()
+        ))
+        .connection_reuse(ConnectionReuseParameters::ReuseUnlimited)
+        .transport();
+
+    let result = mailer.send(email);
+
+    assert!(result.is_ok());
+
+    mailer.close();
+}
+</code></pre></pre>
+<a class="header" href="#lower-level" id="lower-level"><h4>Lower level</h4></a>
+<p>You can also send commands, here is a simple email transaction without
+error handling:</p>
+<pre><pre class="playpen"><code class="language-rust no_run">extern crate lettre;
+
+use lettre::EmailAddress;
+use lettre::smtp::SMTP_PORT;
+use lettre::smtp::client::InnerClient;
+use lettre::smtp::client::net::NetworkStream;
+use lettre::smtp::extension::ClientId;
+use lettre::smtp::commands::*;
+
+fn main() {
+    let mut email_client: InnerClient&lt;NetworkStream&gt; = InnerClient::new();
+    let _ = email_client.connect(&amp;(&quot;localhost&quot;, SMTP_PORT), None);
+    let _ = email_client.command(EhloCommand::new(ClientId::new(&quot;my_hostname&quot;.to_string())));
+    let _ = email_client.command(
+                MailCommand::new(Some(EmailAddress::new(&quot;user@example.com&quot;.to_string()).unwrap()), vec![])
+            );
+    let _ = email_client.command(
+                RcptCommand::new(EmailAddress::new(&quot;user@example.org&quot;.to_string()).unwrap(), vec![])
+            );
+    let _ = email_client.command(DataCommand);
+    let _ = email_client.message(Box::new(&quot;Test email&quot;.as_bytes()));
+    let _ = email_client.command(QuitCommand);
+}
+</code></pre></pre>
+<a class="header" href="#sendmail-transport" id="sendmail-transport"><h4>Sendmail Transport</h4></a>
+<p>The sendmail transport sends the email using the local sendmail command.</p>
+<pre><pre class="playpen"><code class="language-rust no_run">extern crate lettre;
+
+use lettre::sendmail::SendmailTransport;
+use lettre::{SendableEmail, Envelope, EmailAddress, Transport};
+
+fn main() {
+    let email = SendableEmail::new(
+        Envelope::new(
+            Some(EmailAddress::new(&quot;user@localhost&quot;.to_string()).unwrap()),
+            vec![EmailAddress::new(&quot;root@localhost&quot;.to_string()).unwrap()],
+        ).unwrap(),
+        &quot;id&quot;.to_string(),
+        &quot;Hello world&quot;.to_string().into_bytes(),
+    );
+    
+    let mut sender = SendmailTransport::new();
+    let result = sender.send(email);
+    assert!(result.is_ok());
+}
+</code></pre></pre>
+<a class="header" href="#file-transport" id="file-transport"><h4>File Transport</h4></a>
+<p>The file transport writes the emails to the given directory. The name of the file will be
+<code>message_id.txt</code>.
+It can be useful for testing purposes, or if you want to keep track of sent messages.</p>
+<pre><pre class="playpen"><code class="language-rust">extern crate lettre;
+
+use std::env::temp_dir;
+
+use lettre::file::FileTransport;
+use lettre::{Transport, Envelope, EmailAddress, SendableEmail};
+
+fn main() {
+    // Write to the local temp directory
+    let mut sender = FileTransport::new(temp_dir());
+    let email = SendableEmail::new(
+        Envelope::new(
+            Some(EmailAddress::new(&quot;user@localhost&quot;.to_string()).unwrap()),
+            vec![EmailAddress::new(&quot;root@localhost&quot;.to_string()).unwrap()],
+        ).unwrap(),
+        &quot;id&quot;.to_string(),
+        &quot;Hello world&quot;.to_string().into_bytes(),
+    );
+    
+    let result = sender.send(email);
+    assert!(result.is_ok());
+}
+</code></pre></pre>
+<p>Example result in <code>/tmp/b7c211bc-9811-45ce-8cd9-68eab575d695.txt</code>:</p>
+<pre><code class="language-text">b7c211bc-9811-45ce-8cd9-68eab575d695: from=&lt;user@localhost&gt; to=&lt;root@localhost&gt;
+To: &lt;root@localhost&gt;
+From: &lt;user@localhost&gt;
+Subject: Hello
+Date: Sat, 31 Oct 2015 13:42:19 +0100
+Message-ID: &lt;b7c211bc-9811-45ce-8cd9-68eab575d695.lettre@localhost&gt;
+
+Hello World!
+</code></pre>
+<a class="header" href="#stub-transport" id="stub-transport"><h4>Stub Transport</h4></a>
+<p>The stub transport only logs message envelope and drops the content. It can be useful for
+testing purposes.</p>
+<pre><pre class="playpen"><code class="language-rust">extern crate lettre;
+
+use lettre::stub::StubTransport;
+use lettre::{SendableEmail, Envelope, EmailAddress, Transport};
+
+fn main() {
+    let email = SendableEmail::new(
+        Envelope::new(
+            Some(EmailAddress::new(&quot;user@localhost&quot;.to_string()).unwrap()),
+            vec![EmailAddress::new(&quot;root@localhost&quot;.to_string()).unwrap()],
+        ).unwrap(),
+        &quot;id&quot;.to_string(),
+        &quot;Hello world&quot;.to_string().into_bytes(),
+    );
+    
+    let mut sender = StubTransport::new_positive();
+    let result = sender.send(email);
+    assert!(result.is_ok());
+}
+</code></pre></pre>
+<p>Will log (when using a logger like <code>env_logger</code>):</p>
+<pre><code class="language-text">b7c211bc-9811-45ce-8cd9-68eab575d695: from=&lt;user@localhost&gt; to=&lt;root@localhost&gt;
+</code></pre>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+
+        
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+        
+        <script type="text/javascript">
+        window.addEventListener('load', function() {
+            window.setTimeout(window.print, 100);
+        });
+        </script>
+        
+        
+
+    </body>
+</html>
