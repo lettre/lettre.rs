@@ -1,19 +1,17 @@
-lettre tries to make sending emails from Rust program as safe and
-easy as possible. It provides pluggable transports, an email builder
-with MIME support (UTF-8 support, attachments, image embedding).
+lettre makes sending emails from Rust programs as safe and
+hard to misuse as possible, without having to know too much about email
+internals.
 
-Email is a core part of our legacy, and despite its (numerous) flaws, it stays
-our only really interoperable messaging system.
+lettre focuses on modern email client needs and does not intend to extensively implement
+email standards.
 
-lettre *does not* target exhaustive email RFC implementation, but focuses on the
-client only. This may change depending on the Rust email ecosystem and
-on external contributions.
+it provides:
 
-* email builder with MIME support (attachments, image embedding)
-* easy to use (without deep knowledge about email)
-* RFC compliance
-* Internationalization
-* secure (secure defaults, TLS support)
+* several transports (in addition to smtp)
+* a strongly typed email builder with MIME support (attachments, image embedding)
+* internationalized email support
+* secure defaults
+* low level entry point for custom smtp clients
 
 ```rust
 use lettre::{Message, SmtpTransport};

@@ -1,0 +1,365 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>SMTP Transport - Lettre</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="The user documentation of the Lettre crate.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body class="light">
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { } 
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            document.body.className = theme;
+            document.querySelector('html').className = theme + ' js';
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <ol class="chapter"><li><a href="../index.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li><a href="../creating-messages/email.html"><strong aria-hidden="true">2.</strong> Creating Messages</a></li><li><a href="../sending-messages/_index.html"><strong aria-hidden="true">3.</strong> Sending Messages</a></li><li><ol class="section"><li><a href="../sending-messages/smtp.html" class="active"><strong aria-hidden="true">3.1.</strong> SMTP Transport</a></li><li><a href="../sending-messages/sendmail.html"><strong aria-hidden="true">3.2.</strong> Sendmail Transport</a></li><li><a href="../sending-messages/file.html"><strong aria-hidden="true">3.3.</strong> File Transport</a></li><li><a href="../sending-messages/stub.html"><strong aria-hidden="true">3.4.</strong> Stub Transport</a></li></ol></li></ol>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar" class="menu-bar">
+                    <div id="menu-bar-sticky-container">
+                        <div class="left-buttons">
+                            <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                                <i class="fa fa-bars"></i>
+                            </button>
+                            <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                                <i class="fa fa-paint-brush"></i>
+                            </button>
+                            <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                                <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                            </ul>
+                            
+                            <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                                <i class="fa fa-search"></i>
+                            </button>
+                            
+                        </div>
+
+                        <h1 class="menu-title">Lettre</h1> 
+
+                        <div class="right-buttons">
+                            <a href="../print.html" title="Print this book" aria-label="Print this book">
+                                <i id="print-button" class="fa fa-print"></i>
+                            </a>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <a class="header" href="#smtp-transport" id="smtp-transport"><h4>SMTP Transport</h4></a>
+<p>This transport uses the SMTP protocol to send emails over the network (locally or remotely).</p>
+<p>It is designed to be:</p>
+<ul>
+<li>Secured: email are encrypted by default</li>
+<li>Modern: Unicode support for email content and sender/recipient addresses when compatible</li>
+<li>Fast: supports tcp connection reuse</li>
+</ul>
+<p>This client is designed to send emails to a relay server, and should <em>not</em> be used to send
+emails directly to the destination.</p>
+<p>The relay server can be the local email server, a specific host or a third-party service.</p>
+<a class="header" href="#simple-example" id="simple-example"><h4>Simple example</h4></a>
+<p>This is the most basic example of usage:</p>
+<pre><pre class="playpen"><code class="language-rust no_run">extern crate lettre;
+
+use lettre::{SendableEmail, EmailAddress, Transport, Envelope, SmtpClient};
+
+fn main() {
+    let email = SendableEmail::new(
+        Envelope::new(
+            Some(EmailAddress::new(&quot;user@localhost&quot;.to_string()).unwrap()),
+            vec![EmailAddress::new(&quot;root@localhost&quot;.to_string()).unwrap()],
+        ).unwrap(),
+        &quot;id&quot;.to_string(),
+        &quot;Hello world&quot;.to_string().into_bytes(),
+    );
+    
+    // Open a local connection on port 25
+    let mut mailer =
+    SmtpClient::new_unencrypted_localhost().unwrap().transport();
+    // Send the email
+    let result = mailer.send(email);
+    
+    assert!(result.is_ok());
+}
+</code></pre></pre>
+<a class="header" href="#complete-example" id="complete-example"><h4>Complete example</h4></a>
+<pre><pre class="playpen"><code class="language-rust no_run">extern crate lettre;
+
+use lettre::smtp::authentication::{Credentials, Mechanism};
+use lettre::{SendableEmail, Envelope, EmailAddress, Transport, SmtpClient};
+use lettre::smtp::extension::ClientId;
+use lettre::smtp::ConnectionReuseParameters;
+
+fn main() {
+    let email_1 = SendableEmail::new(
+        Envelope::new(
+            Some(EmailAddress::new(&quot;user@localhost&quot;.to_string()).unwrap()),
+            vec![EmailAddress::new(&quot;root@localhost&quot;.to_string()).unwrap()],
+        ).unwrap(),
+        &quot;id1&quot;.to_string(),
+        &quot;Hello world&quot;.to_string().into_bytes(),
+    );
+    
+    let email_2 = SendableEmail::new(
+        Envelope::new(
+            Some(EmailAddress::new(&quot;user@localhost&quot;.to_string()).unwrap()),
+            vec![EmailAddress::new(&quot;root@localhost&quot;.to_string()).unwrap()],
+        ).unwrap(),
+        &quot;id2&quot;.to_string(),
+        &quot;Hello world a second time&quot;.to_string().into_bytes(),
+    );
+    
+    // Connect to a remote server on a custom port
+    let mut mailer = SmtpClient::new_simple(&quot;server.tld&quot;).unwrap()
+        // Set the name sent during EHLO/HELO, default is `localhost`
+        .hello_name(ClientId::Domain(&quot;my.hostname.tld&quot;.to_string()))
+        // Add credentials for authentication
+        .credentials(Credentials::new(&quot;username&quot;.to_string(), &quot;password&quot;.to_string()))
+        // Enable SMTPUTF8 if the server supports it
+        .smtp_utf8(true)
+        // Configure expected authentication mechanism
+        .authentication_mechanism(Mechanism::Plain)
+        // Enable connection reuse
+        .connection_reuse(ConnectionReuseParameters::ReuseUnlimited).transport();
+    
+    let result_1 = mailer.send(email_1);
+    assert!(result_1.is_ok());
+    
+    // The second email will use the same connection
+    let result_2 = mailer.send(email_2);
+    assert!(result_2.is_ok());
+    
+    // Explicitly close the SMTP transaction as we enabled connection reuse
+    mailer.close();
+}
+</code></pre></pre>
+<p>You can specify custom TLS settings:</p>
+<pre><pre class="playpen"><code class="language-rust no_run">extern crate native_tls;
+extern crate lettre;
+extern crate lettre_email;
+
+use lettre::{
+    ClientSecurity, ClientTlsParameters, EmailAddress, Envelope, 
+    SendableEmail, SmtpClient, Transport,
+};
+use lettre::smtp::authentication::{Credentials, Mechanism};
+use lettre::smtp::ConnectionReuseParameters;
+use native_tls::{Protocol, TlsConnector};
+
+fn main() {
+    let email = SendableEmail::new(
+        Envelope::new(
+            Some(EmailAddress::new(&quot;user@localhost&quot;.to_string()).unwrap()),
+            vec![EmailAddress::new(&quot;root@localhost&quot;.to_string()).unwrap()],
+        ).unwrap(),
+        &quot;message_id&quot;.to_string(),
+        &quot;Hello world&quot;.to_string().into_bytes(),
+    );
+
+    let mut tls_builder = TlsConnector::builder();
+    tls_builder.min_protocol_version(Some(Protocol::Tlsv10));
+    let tls_parameters =
+        ClientTlsParameters::new(
+            &quot;smtp.example.com&quot;.to_string(),
+            tls_builder.build().unwrap()
+        );
+
+    let mut mailer = SmtpClient::new(
+        (&quot;smtp.example.com&quot;, 465), ClientSecurity::Wrapper(tls_parameters)
+    ).unwrap()
+        .authentication_mechanism(Mechanism::Login)
+        .credentials(Credentials::new(
+            &quot;example_username&quot;.to_string(), &quot;example_password&quot;.to_string()
+        ))
+        .connection_reuse(ConnectionReuseParameters::ReuseUnlimited)
+        .transport();
+
+    let result = mailer.send(email);
+
+    assert!(result.is_ok());
+
+    mailer.close();
+}
+</code></pre></pre>
+<a class="header" href="#lower-level" id="lower-level"><h4>Lower level</h4></a>
+<p>You can also send commands, here is a simple email transaction without
+error handling:</p>
+<pre><pre class="playpen"><code class="language-rust no_run">extern crate lettre;
+
+use lettre::EmailAddress;
+use lettre::smtp::SMTP_PORT;
+use lettre::smtp::client::InnerClient;
+use lettre::smtp::client::net::NetworkStream;
+use lettre::smtp::extension::ClientId;
+use lettre::smtp::commands::*;
+
+fn main() {
+    let mut email_client: InnerClient&lt;NetworkStream&gt; = InnerClient::new();
+    let _ = email_client.connect(&amp;(&quot;localhost&quot;, SMTP_PORT), None);
+    let _ = email_client.command(EhloCommand::new(ClientId::new(&quot;my_hostname&quot;.to_string())));
+    let _ = email_client.command(
+                MailCommand::new(Some(EmailAddress::new(&quot;user@example.com&quot;.to_string()).unwrap()), vec![])
+            );
+    let _ = email_client.command(
+                RcptCommand::new(EmailAddress::new(&quot;user@example.org&quot;.to_string()).unwrap(), vec![])
+            );
+    let _ = email_client.command(DataCommand);
+    let _ = email_client.message(Box::new(&quot;Test email&quot;.as_bytes()));
+    let _ = email_client.command(QuitCommand);
+}
+</code></pre></pre>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="../sending-messages/_index.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="../sending-messages/sendmail.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a href="../sending-messages/_index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a href="../sending-messages/sendmail.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+
+        
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>
