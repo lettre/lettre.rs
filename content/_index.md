@@ -1,17 +1,14 @@
-lettre makes sending emails from Rust programs as safe and
-hard to misuse as possible, without having to know too much about email
-internals.
+lettre is an email client for Rust programs allowing easily sending emails from Rust
+applications by providing:
 
-lettre focuses on modern email client needs and does not intend to extensively implement
-email standards.
-
-it provides:
-
-* several transports (in addition to smtp)
+* several email transports (in addition to smtp)
 * a strongly typed email builder with MIME support (attachments, image embedding)
 * internationalized email support
 * secure defaults
 * low level entry point for custom smtp clients
+
+lettre focuses on modern email client needs and does not intend to extensively implement
+email standards.
 
 ```rust
 use lettre::{Message, SmtpTransport};

@@ -2,11 +2,12 @@
 title: "towards lettre 1.0"
 description: "towards lettre 1.0"
 date: "2020-07-26"
+draft: true
 ---
 
 #### what is lettre?
 
-lettre provides an email client for Rust programs, to allow easily sending emails from Rust
+lettre is an email client for Rust programs, to allow easily sending emails from Rust
 applications with the following focuses:
 
 * ease of use, without particular knowledge about email
