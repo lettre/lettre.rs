@@ -1,8 +1,7 @@
 ---
 title: "towards lettre 1.0"
 description: "towards lettre 1.0"
-date: "2020-07-26"
-draft: true
+date: "2020-08-24"
 ---
 
 #### what is lettre?

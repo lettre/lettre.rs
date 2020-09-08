@@ -1,4 +1,4 @@
-# lettre.at
+# lettre.rs
 
 This site presents lettre's features ans news. Usage docs are on [docs.rs](https://docs.rs/lettre/).
 

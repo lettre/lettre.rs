@@ -1,4 +1,4 @@
-baseURL = "https://blog.lettre.at/"
+baseURL = "https://lettre.rs/"
 languageCode = "en-us"
 title = "lettre"
 theme = ["lettre", "journal"]
