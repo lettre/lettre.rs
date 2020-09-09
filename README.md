@@ -4,7 +4,7 @@ This site presents lettre's features ans news. Usage docs are on [docs.rs](https
 
 ## Development
 
-The site is build using [hugo](https://gohugo.io/).
+The site is built using [hugo](https://gohugo.io/).
 
 To initialize the upstream parent theme, run:
 
