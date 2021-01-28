@@ -1,7 +1,7 @@
 lettre is an email client for Rust programs allowing easily sending emails from Rust
 applications by providing:
 
-* several email transports (in addition to smtp)
+* several email transports
 * a strongly typed email builder with MIME support (attachments, image embedding)
 * internationalized email support
 * secure defaults

@@ -34,15 +34,17 @@
 
     {{ if .IsHome -}}
     <header class="site-header" style="margin-bottom: 0;">
-      <img src="/images/lettre.png" alt="lettre logo" style="float: left; width: 6em; margin-right: 2em;" />
+      <img src="/images/lettre.png" alt="lettre logo" style="float: left; width: 8em; margin-right: 2em;" />
+      <div style="margin-bottom: 1em;">
       <h1>{{ .Site.Title }}</h1>
       <p>{{ .Site.Params.tagline }}</p>
 
-      <div style="margin: 2rem auto 0 auto; font-size: 0.9rem; width: max-content;">
+      <div style="font-size: 0.9rem;">
         <a href="https://github.com/lettre/lettre">repository</a> ⋅
-        <a href="https://docs.rs/lettre">documentation</a> (<a href="/0.9/">0.9</a>) ⋅
-        <a href="https://gitter.im/lettre/lettre">chat</a> ⋅
+        <a href="https://docs.rs/lettre">documentation</a> ⋅
+        <a href="https://github.com/lettre/lettre/discussions">discussions</a> ⋅
         <a href="https://twitter.com/lettre_rs">twitter</a>
+      </div>
       </div>
     </header>
     {{- else -}}
