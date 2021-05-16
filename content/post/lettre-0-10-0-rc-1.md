@@ -1,7 +1,7 @@
 ---
 title: "Announcing lettre 0.10.0-rc.1"
 description: "lettre 0.10.0-rc.1 has been released"
-date: "2020-05-16"
+date: "2021-05-16"
 ---
 
 We are pleased to announce the first release candidate of the next version of lettre, an email client for Rust programs.
