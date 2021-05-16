@@ -9,7 +9,7 @@
       <ol>
         {{ range .Pages -}}
         <li>
-          <time datetime="{{ .Date.Format "2006-01-02 15:04:05 MST" }}">{{ lower ( .Date.Format "Jan 02" ) }}</time>
+          <time datetime="{{ .Date.Format "2006-01-02 15:04:05 MST" }}">{{ .Date.Format "Jan 02" }}</time>
           <a href="{{ .RelPermalink }}">{{ .Title }}</a>
         </li>
         {{- end }}
@@ -19,7 +19,7 @@
 
   </article>
 
-  <h4>features</h4>
+  <h4>Features</h4>
 
   {{ .Content }}
 

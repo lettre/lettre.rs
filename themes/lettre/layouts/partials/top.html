@@ -22,14 +22,14 @@
   <meta name="description" content="{{ .Description }}">
   {{- end }}
 
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro|Arvo:400,700">
+  <link rel="stylesheet" href="{{ "css/fonts.css" | relURL }}">
   <link rel="stylesheet" href="{{ "css/highlight.css" | relURL }}">
   <link rel="stylesheet" href="{{ "css/journal.css" | relURL }}">
   <link href="{{ "index.xml" | relURL }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}">
 
 </head>
 
-<body>
+<body style="margin-bottom: 50px; margin-top: 30px;">
   <div class="container">
 
     {{ if .IsHome -}}
@@ -49,6 +49,6 @@
     </header>
     {{- else -}}
     <nav class="site-nav">
-      <a href="{{ .Site.BaseURL }}">index</a>
+      <a href="{{ .Site.BaseURL }}">home</a>
     </nav>
     {{- end }}
