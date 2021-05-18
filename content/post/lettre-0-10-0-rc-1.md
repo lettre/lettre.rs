@@ -72,7 +72,7 @@ Migration notes:
 * The `serde-impls` feature has been renamed to `serde`. To migrate, rename the feature.
 * `FileTransport` writes emails into `.eml` instead of `.json`
 
-If you need help or advice, please start a [discussion](https://github.com/lettre/lettre/discussions)
+If you need help or advice, please take a look at the [examples](https://github.com/lettre/lettre/tree/master/examples) or start a [discussion](https://github.com/lettre/lettre/discussions)
 in the repository.
 
 ## Road to 1.0
