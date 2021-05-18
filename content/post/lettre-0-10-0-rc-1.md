@@ -40,8 +40,10 @@ In addition to `native-tls`, lettre now supports `rustls` for encrypted SMTP con
 
 ### File transport
 
-The file transport allows storing emails to disk instead of sending them, now uses a more standard `.eml`
-formal instead of `json`, and is now able to read the message to send them later.
+The file transport allows storing emails to disk, and now uses the standard `.eml`
+format instead of `json`. This format stores the email with the original
+headers and body, and can be read by standard email applications like Thunderbird.
+Messages can also be read back, making it possible to send them later.
 
 ### Miscellaneous
 
