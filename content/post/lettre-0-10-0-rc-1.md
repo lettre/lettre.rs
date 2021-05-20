@@ -7,7 +7,7 @@ date: "2021-05-16"
 We are pleased to announce the first release candidate of the next version of lettre, an email client for the Rust programming language.
 lettre allows sending emails from Rust applications, focusing on ease of use, secure
 defaults and modern features (like support for full internationalization).
-It does not aim at implementing the email RFCs extensively, but only what is necessary for our needs.
+It does not aim at implementing email RFCs extensively, but only what is necessary for our needs.
 
 lettre provides a type-safe email builder, several transports, tls support with `rustls` and `native-tls` and async support with `tokio` and `async-std`.
 
@@ -43,7 +43,7 @@ In addition to `native-tls`, lettre now supports `rustls` for encrypted SMTP con
 The file transport allows storing emails to disk, and now uses the standard `.eml`
 format instead of `json`. This format stores the email with the original
 headers and body, and can be read by standard email applications like Thunderbird.
-Messages can also be read back, making it possible to send them later.
+`.eml` files can also be read back, making it possible to send them later.
 
 ### Miscellaneous
 
