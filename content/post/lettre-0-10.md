@@ -9,7 +9,7 @@ lettre allows sending emails from Rust applications, focusing on ease of use, se
 defaults and modern features (like support for full internationalization).
 It does not aim at implementing email RFCs extensively, but only what is necessary for our needs.
 
-lettre provides a type-safe email builder, several transports, tls support with `rustls` and `native-tls` and async support with `tokio` and `async-std`.
+lettre provides a type-safe email builder, several transports, TLS support with `rustls` and `native-tls` and async support with `tokio` and `async-std`.
 
 lettre is now used by many projects, including
 [crates.io](https://github.com/rust-lang/crates.io/blob/master/src/email.rs) itself!
