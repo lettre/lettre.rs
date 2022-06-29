@@ -115,6 +115,7 @@ Special thanks to all contributor to this release since 0.9, in particular:
 * Manuel Pelloni ([manuelpelloni](https://github.com/manuelpelloni)) for various refactorings and improving the documentation
 * [RotationMatrix](https://github.com/RotationMatrix) for improving the examples
 * Sven-Hendrik Haase ([svenstaro](https://github.com/svenstaro)) for improving the `StubTransport`
+* Thomas Jarosch ([thomasjfox](https://github.com/thomasjfox)) for extending tests in the [email-encoding crate](https://crates.io/crates/email-encoding)
 * Tim Anderson ([timando](https://github.com/timando)) for adding encrypted and signed multipart emails support
 * [TornaxO7](https://github.com/TornaxO7) for improvement of `Content-Type` header
 * Vincent Breitmoser ([Valodim](https://github.com/Valodim)) for fixing date format in headers
