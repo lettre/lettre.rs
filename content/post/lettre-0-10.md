@@ -54,7 +54,7 @@ headers and body, and can be read by standard email applications like Thunderbir
 * The number of publicly exposed dependencies has been reduced, improving API stability
 * A lot of CI improvements, including moving to Github actions
 * The [previous doc site](https://lettre.rs/0.9/) has been merged into the crate documentation
-* MSRV is now 1.56.
+* MSRV is now 1.56. Future patch releases may bump the MSRV while trying to keep support for Rust releases made in the last 6 months.
 
 Read the [change log](https://github.com/lettre/lettre/blob/master/CHANGELOG.md#v0100) for more details.
 
