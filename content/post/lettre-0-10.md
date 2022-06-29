@@ -111,7 +111,7 @@ Special thanks to all contributor to this release since 0.9, in particular:
 * James Hillyerd ([jhillyerd](https://github.com/jhillyerd)) for their documentation contribution
 * Julien Blatecky ([julien1619](https://github.com/julien1619)) for adding `Content-ID` header
 * [Jupp56](https://github.com/Jupp56) for fixing the README example
-* Kevin Cox ([kevincox]([](https://github.com/kevincox)) for their work on DKIM support and headers encoding
+* Kevin Cox ([kevincox](https://github.com/kevincox)) for their work on DKIM support and headers encoding
 * Manuel Pelloni ([manuelpelloni](https://github.com/manuelpelloni)) for various refactorings and improving the documentation
 * [RotationMatrix](https://github.com/RotationMatrix) for improving the examples
 * Sven-Hendrik Haase ([svenstaro](https://github.com/svenstaro)) for improving the `StubTransport`
