@@ -36,7 +36,7 @@ Transports now have `async-std` and `tokio` support for async email sending.
 
 ### Features and dependencies
 
-We added a lot of control over which features can be enabled
+We added a lot of control over which features can be enabled.
 
 #### rustls support
 
